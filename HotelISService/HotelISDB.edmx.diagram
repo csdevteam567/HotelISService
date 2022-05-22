@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8fbe3938a84f414c91a22160f4b77748" Name="Diagram1" ZoomLevel="73" >
+        <EntityTypeShape EntityType="HotelISDB.User" Width="1.5" PointX="16" PointY="7" />
+        <EntityTypeShape EntityType="HotelISDB.Apartment" Width="1.5" PointX="7.5" PointY="4.5" />
+        <EntityTypeShape EntityType="HotelISDB.Guest" Width="1.5" PointX="16" PointY="2.5" />
+        <EntityTypeShape EntityType="HotelISDB.Order" Width="1.5" PointX="13.25" PointY="4.375" />
+        <EntityTypeShape EntityType="HotelISDB.Restaurant" Width="1.5" PointX="2.5" PointY="7.75" />
+        <EntityTypeShape EntityType="HotelISDB.Menu" Width="1.5" PointX="6.5" PointY="7.75" />
+        <AssociationConnector Association="HotelISDB.RestaurantMenu" />
+        <EntityTypeShape EntityType="HotelISDB.OrderedDish" Width="1.5" PointX="9.875" PointY="8" />
+        <AssociationConnector Association="HotelISDB.MenuOrderedDishes" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="HotelISDB.OrderOrderedDish" />
+        <EntityTypeShape EntityType="HotelISDB.Floor" Width="1.875" PointX="4.375" PointY="4.875" />
+        <EntityTypeShape EntityType="HotelISDB.OrderedApartment" Width="1.75" PointX="10.5" PointY="2.875" />
+        <AssociationConnector Association="HotelISDB.OrderOrderedApartment" />
+        <AssociationConnector Association="HotelISDB.FloorApartment" />
+        <AssociationConnector Association="HotelISDB.UserOrder" />
+        <AssociationConnector Association="HotelISDB.ApartmentOrderedApartment" />
+        <EntityTypeShape EntityType="HotelISDB.Country" Width="1.5" PointX="7.25" PointY="1.875" />
+        <EntityTypeShape EntityType="HotelISDB.City" Width="1.5" PointX="4.5" PointY="2.625" />
+        <AssociationConnector Association="HotelISDB.CountryCity" />
+        <EntityTypeShape EntityType="HotelISDB.Hotel" Width="1.5" PointX="1.125" PointY="3.5" />
+        <AssociationConnector Association="HotelISDB.HotelRestaurant" />
+        <AssociationConnector Association="HotelISDB.HotelFloor" />
+        <AssociationConnector Association="HotelISDB.CityHotel" />
+        <AssociationConnector Association="HotelISDB.GuestOrderedApartment" />
+        <AssociationConnector Association="HotelISDB.HotelOrder" />
+        <AssociationConnector Association="HotelISDB.GuestOrder" />
+        <EntityTypeShape EntityType="HotelISDB.ChildParent" Width="1.5" PointX="18.375" PointY="2.375" />
+        <AssociationConnector Association="HotelISDB.GuestChildParentParent" />
+        <AssociationConnector Association="HotelISDB.GuestChildParentChild" />
+        <EntityTypeShape EntityType="HotelISDB.FamilyRelation" Width="1.5" PointX="13.125" PointY="0.75" />
+        <AssociationConnector Association="HotelISDB.GuestFamilyRelation" />
+        <AssociationConnector Association="HotelISDB.GuestFamilyRelation1" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

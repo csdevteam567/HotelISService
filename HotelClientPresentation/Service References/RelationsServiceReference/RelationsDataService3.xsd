@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/HotelISDTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/HotelISDTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ParentChildDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChildFirstname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChildId" type="xs:int" />
+      <xs:element minOccurs="0" name="ChildLastname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChildPassport" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentFirstname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentId" type="xs:int" />
+      <xs:element minOccurs="0" name="ParentLastname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentPassport" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParentChildDto" nillable="true" type="tns:ParentChildDto" />
+  <xs:complexType name="ServiceResponceDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EntryId" type="xs:int" />
+      <xs:element minOccurs="0" name="IsOperationSuccessful" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResponceDto" nillable="true" type="tns:ServiceResponceDto" />
+</xs:schema>

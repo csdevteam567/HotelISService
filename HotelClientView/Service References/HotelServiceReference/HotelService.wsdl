@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="HotelService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50809/HotelService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50809/HotelService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50809/HotelService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/HotelISDTO" />
+      <xsd:import schemaLocation="http://localhost:50809/HotelService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHotelService_TestConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestConnection" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_TestConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_AuthorizeUzer_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthorizeUzer" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_AuthorizeUzer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthorizeUzerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUser" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCity" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetCities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCities" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetCities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCity" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCity" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCountry" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetCountries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountries" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetCountries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCountry" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCountry" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertHotel_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertHotel" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertHotel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertHotelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetHotels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHotels" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetHotels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHotelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateHotel_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateHotel" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateHotel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateHotelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteHotel_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteHotel" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteHotel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteHotelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertApartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertApartment" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertApartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertApartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetApartments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApartments" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetApartments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateApartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateApartment" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateApartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateApartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteApartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteApartment" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteApartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteApartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertDish_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDish" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertDish_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDishResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetMenu_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenu" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetMenu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateMenu_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMenu" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateMenu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteDish_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDish" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteDish_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDishResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertGuest_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertGuest" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertGuest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertGuestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetGuests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuests" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetGuests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateGuest_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGuest" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateGuest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGuestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteGuest_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGuest" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteGuest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGuestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertFloor_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertFloor" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertFloor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertFloorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetFloors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFloors" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetFloors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFloorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateFloor_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFloor" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateFloor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFloorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteFloor_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFloor" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteFloor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFloorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertRestaurant_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRestaurant" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertRestaurant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRestaurantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetRestaurants_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRestaurants" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetRestaurants_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRestaurantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateRestaurant_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRestaurant" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateRestaurant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRestaurantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteRestaurant_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRestaurant" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteRestaurant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRestaurantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrder" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_InsertOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrders" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrder" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_UpdateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrder" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_CheckOutOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutOrder" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_CheckOutOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOutOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_OrderApartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrderApartment" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_OrderApartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrderApartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetOrderedApartments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderedApartments" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_GetOrderedApartments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderedApartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteOrderedApartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderedApartment" />
+  </wsdl:message>
+  <wsdl:message name="IHotelService_DeleteOrderedApartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderedApartmentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IHotelService">
+    <wsdl:operation name="TestConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/TestConnection" message="tns:IHotelService_TestConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/TestConnectionResponse" message="tns:IHotelService_TestConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeUzer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/AuthorizeUzer" message="tns:IHotelService_AuthorizeUzer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/AuthorizeUzerResponse" message="tns:IHotelService_AuthorizeUzer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/InsertUser" message="tns:IHotelService_InsertUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/InsertUserResponse" message="tns:IHotelService_InsertUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/GetUsers" message="tns:IHotelService_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/GetUsersResponse" message="tns:IHotelService_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/UpdateUser" message="tns:IHotelService_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/UpdateUserResponse" message="tns:IHotelService_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/DeleteUser" message="tns:IHotelService_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/DeleteUserResponse" message="tns:IHotelService_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/InsertCity" message="tns:IHotelService_InsertCity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/InsertCityResponse" message="tns:IHotelService_InsertCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/GetCities" message="tns:IHotelService_GetCities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/GetCitiesResponse" message="tns:IHotelService_GetCities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/UpdateCity" message="tns:IHotelService_UpdateCity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/UpdateCityResponse" message="tns:IHotelService_UpdateCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/DeleteCity" message="tns:IHotelService_DeleteCity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/DeleteCityResponse" message="tns:IHotelService_DeleteCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/InsertCountry" message="tns:IHotelService_InsertCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/InsertCountryResponse" message="tns:IHotelService_InsertCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/GetCountries" message="tns:IHotelService_GetCountries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/GetCountriesResponse" message="tns:IHotelService_GetCountries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/UpdateCountry" message="tns:IHotelService_UpdateCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/UpdateCountryResponse" message="tns:IHotelService_UpdateCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/DeleteCountry" message="tns:IHotelService_DeleteCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/DeleteCountryResponse" message="tns:IHotelService_DeleteCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertHotel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/InsertHotel" message="tns:IHotelService_InsertHotel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/InsertHotelResponse" message="tns:IHotelService_InsertHotel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHotels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/GetHotels" message="tns:IHotelService_GetHotels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/GetHotelsResponse" message="tns:IHotelService_GetHotels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateHotel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/UpdateHotel" message="tns:IHotelService_UpdateHotel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/UpdateHotelResponse" message="tns:IHotelService_UpdateHotel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHotel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/DeleteHotel" message="tns:IHotelService_DeleteHotel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/DeleteHotelResponse" message="tns:IHotelService_DeleteHotel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertApartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/InsertApartment" message="tns:IHotelService_InsertApartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/InsertApartmentResponse" message="tns:IHotelService_InsertApartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApartments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/GetApartments" message="tns:IHotelService_GetApartments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/GetApartmentsResponse" message="tns:IHotelService_GetApartments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/UpdateApartment" message="tns:IHotelService_UpdateApartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/UpdateApartmentResponse" message="tns:IHotelService_UpdateApartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteApartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/DeleteApartment" message="tns:IHotelService_DeleteApartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/DeleteApartmentResponse" message="tns:IHotelService_DeleteApartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDish">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/InsertDish" message="tns:IHotelService_InsertDish_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/InsertDishResponse" message="tns:IHotelService_InsertDish_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/GetMenu" message="tns:IHotelService_GetMenu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/GetMenuResponse" message="tns:IHotelService_GetMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMenu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/UpdateMenu" message="tns:IHotelService_UpdateMenu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/UpdateMenuResponse" message="tns:IHotelService_UpdateMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDish">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/DeleteDish" message="tns:IHotelService_DeleteDish_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/DeleteDishResponse" message="tns:IHotelService_DeleteDish_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertGuest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/InsertGuest" message="tns:IHotelService_InsertGuest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/InsertGuestResponse" message="tns:IHotelService_InsertGuest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/GetGuests" message="tns:IHotelService_GetGuests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/GetGuestsResponse" message="tns:IHotelService_GetGuests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGuest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/UpdateGuest" message="tns:IHotelService_UpdateGuest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/UpdateGuestResponse" message="tns:IHotelService_UpdateGuest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGuest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/DeleteGuest" message="tns:IHotelService_DeleteGuest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/DeleteGuestResponse" message="tns:IHotelService_DeleteGuest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertFloor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/InsertFloor" message="tns:IHotelService_InsertFloor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/InsertFloorResponse" message="tns:IHotelService_InsertFloor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFloors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/GetFloors" message="tns:IHotelService_GetFloors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/GetFloorsResponse" message="tns:IHotelService_GetFloors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFloor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/UpdateFloor" message="tns:IHotelService_UpdateFloor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/UpdateFloorResponse" message="tns:IHotelService_UpdateFloor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFloor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/DeleteFloor" message="tns:IHotelService_DeleteFloor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/DeleteFloorResponse" message="tns:IHotelService_DeleteFloor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertRestaurant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/InsertRestaurant" message="tns:IHotelService_InsertRestaurant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/InsertRestaurantResponse" message="tns:IHotelService_InsertRestaurant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurants">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/GetRestaurants" message="tns:IHotelService_GetRestaurants_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/GetRestaurantsResponse" message="tns:IHotelService_GetRestaurants_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRestaurant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/UpdateRestaurant" message="tns:IHotelService_UpdateRestaurant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/UpdateRestaurantResponse" message="tns:IHotelService_UpdateRestaurant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRestaurant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/DeleteRestaurant" message="tns:IHotelService_DeleteRestaurant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/DeleteRestaurantResponse" message="tns:IHotelService_DeleteRestaurant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/InsertOrder" message="tns:IHotelService_InsertOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/InsertOrderResponse" message="tns:IHotelService_InsertOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/GetOrders" message="tns:IHotelService_GetOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/GetOrdersResponse" message="tns:IHotelService_GetOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/UpdateOrder" message="tns:IHotelService_UpdateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/UpdateOrderResponse" message="tns:IHotelService_UpdateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/DeleteOrder" message="tns:IHotelService_DeleteOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/DeleteOrderResponse" message="tns:IHotelService_DeleteOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/CheckOutOrder" message="tns:IHotelService_CheckOutOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/CheckOutOrderResponse" message="tns:IHotelService_CheckOutOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderApartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/OrderApartment" message="tns:IHotelService_OrderApartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/OrderApartmentResponse" message="tns:IHotelService_OrderApartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderedApartments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/GetOrderedApartments" message="tns:IHotelService_GetOrderedApartments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/GetOrderedApartmentsResponse" message="tns:IHotelService_GetOrderedApartments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderedApartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHotelService/DeleteOrderedApartment" message="tns:IHotelService_DeleteOrderedApartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHotelService/DeleteOrderedApartmentResponse" message="tns:IHotelService_DeleteOrderedApartment_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IHotelService" type="tns:IHotelService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TestConnection">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/TestConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeUzer">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/AuthorizeUzer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUser">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/InsertUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCity">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/InsertCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCities">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/GetCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCity">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/UpdateCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCity">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/DeleteCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCountry">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/InsertCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/GetCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCountry">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/UpdateCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCountry">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/DeleteCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertHotel">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/InsertHotel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHotels">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/GetHotels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateHotel">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/UpdateHotel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHotel">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/DeleteHotel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertApartment">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/InsertApartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApartments">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/GetApartments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApartment">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/UpdateApartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteApartment">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/DeleteApartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDish">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/InsertDish" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/GetMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMenu">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/UpdateMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDish">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/DeleteDish" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertGuest">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/InsertGuest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuests">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/GetGuests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGuest">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/UpdateGuest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGuest">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/DeleteGuest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFloor">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/InsertFloor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFloors">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/GetFloors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFloor">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/UpdateFloor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFloor">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/DeleteFloor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRestaurant">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/InsertRestaurant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurants">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/GetRestaurants" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRestaurant">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/UpdateRestaurant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRestaurant">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/DeleteRestaurant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOrder">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/InsertOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrders">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/GetOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/UpdateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrder">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/DeleteOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutOrder">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/CheckOutOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderApartment">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/OrderApartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderedApartments">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/GetOrderedApartments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrderedApartment">
+      <soap:operation soapAction="http://tempuri.org/IHotelService/DeleteOrderedApartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HotelService">
+    <wsdl:port name="BasicHttpBinding_IHotelService" binding="tns:BasicHttpBinding_IHotelService">
+      <soap:address location="http://localhost:50809/HotelService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

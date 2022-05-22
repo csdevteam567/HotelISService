@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/HotelISDTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/HotelISDTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50809/HotelService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ServiceResponceDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EntryId" type="xs:int" />
+      <xs:element minOccurs="0" name="IsOperationSuccessful" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResponceDto" nillable="true" type="tns:ServiceResponceDto" />
+  <xs:complexType name="LoginDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoginDto" nillable="true" type="tns:LoginDto" />
+  <xs:complexType name="LoginResultDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserLogin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserRole" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoginResultDto" nillable="true" type="tns:LoginResultDto" />
+  <xs:complexType name="UserDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Role" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserDto" nillable="true" type="tns:UserDto" />
+  <xs:complexType name="ArrayOfUserDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserDto" nillable="true" type="tns:UserDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserDto" nillable="true" type="tns:ArrayOfUserDto" />
+  <xs:complexType name="CityDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CityDto" nillable="true" type="tns:CityDto" />
+  <xs:complexType name="ArrayOfCityDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CityDto" nillable="true" type="tns:CityDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCityDto" nillable="true" type="tns:ArrayOfCityDto" />
+  <xs:complexType name="CountryDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CountryDto" nillable="true" type="tns:CountryDto" />
+  <xs:complexType name="ArrayOfCountryDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CountryDto" nillable="true" type="tns:CountryDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCountryDto" nillable="true" type="tns:ArrayOfCountryDto" />
+  <xs:complexType name="HotelDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaxFloorsCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rating" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RoomsByFloor" nillable="true" type="q1:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HotelDto" nillable="true" type="tns:HotelDto" />
+  <xs:complexType name="ArrayOfHotelDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HotelDto" nillable="true" type="tns:HotelDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHotelDto" nillable="true" type="tns:ArrayOfHotelDto" />
+  <xs:complexType name="ApartmentDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FloorNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="HasStatusVip" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HotelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxCapacity" type="xs:int" />
+      <xs:element minOccurs="0" name="Number" type="xs:int" />
+      <xs:element minOccurs="0" name="OnlyAvailable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Price" type="xs:double" />
+      <xs:element minOccurs="0" name="RoomsNumber" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApartmentDto" nillable="true" type="tns:ApartmentDto" />
+  <xs:complexType name="ArrayOfApartmentDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApartmentDto" nillable="true" type="tns:ApartmentDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApartmentDto" nillable="true" type="tns:ArrayOfApartmentDto" />
+  <xs:complexType name="MenuDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DishId" type="xs:int" />
+      <xs:element minOccurs="0" name="DishName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HotelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" type="xs:double" />
+      <xs:element minOccurs="0" name="RestaurantId" type="xs:int" />
+      <xs:element minOccurs="0" name="RestaurantName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MenuDto" nillable="true" type="tns:MenuDto" />
+  <xs:complexType name="ArrayOfMenuDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MenuDto" nillable="true" type="tns:MenuDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMenuDto" nillable="true" type="tns:ArrayOfMenuDto" />
+  <xs:complexType name="GuestDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateOfBirth" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Discount" type="xs:double" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PassportNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sex" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusVip" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GuestDto" nillable="true" type="tns:GuestDto" />
+  <xs:complexType name="ArrayOfGuestDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GuestDto" nillable="true" type="tns:GuestDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGuestDto" nillable="true" type="tns:ArrayOfGuestDto" />
+  <xs:complexType name="FloorDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FloorNum" type="xs:int" />
+      <xs:element minOccurs="0" name="HotelCityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HotelCountryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HotelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxApartments" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FloorDto" nillable="true" type="tns:FloorDto" />
+  <xs:complexType name="ArrayOfFloorDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FloorDto" nillable="true" type="tns:FloorDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFloorDto" nillable="true" type="tns:ArrayOfFloorDto" />
+  <xs:complexType name="RestaurantDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HotelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RestaurantDto" nillable="true" type="tns:RestaurantDto" />
+  <xs:complexType name="ArrayOfRestaurantDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RestaurantDto" nillable="true" type="tns:RestaurantDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRestaurantDto" nillable="true" type="tns:ArrayOfRestaurantDto" />
+  <xs:complexType name="OrderDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActualDepartureDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartureDate" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GuestPassports" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="HotelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderDate" type="xs:dateTime" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OrderedApartmentNumbers" nillable="true" type="q3:ArrayOfint" />
+      <xs:element minOccurs="0" name="Total" type="xs:double" />
+      <xs:element minOccurs="0" name="UserLogin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderDto" nillable="true" type="tns:OrderDto" />
+  <xs:complexType name="ArrayOfOrderDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderDto" nillable="true" type="tns:OrderDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrderDto" nillable="true" type="tns:ArrayOfOrderDto" />
+  <xs:complexType name="PaycheckDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HotelName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderedApartments" nillable="true" type="tns:ArrayOfApartmentInfoDto" />
+      <xs:element minOccurs="0" name="OrderedDishes" nillable="true" type="tns:ArrayOfDishDto" />
+      <xs:element minOccurs="0" name="TotalPrice" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaycheckDto" nillable="true" type="tns:PaycheckDto" />
+  <xs:complexType name="ArrayOfApartmentInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApartmentInfoDto" nillable="true" type="tns:ApartmentInfoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApartmentInfoDto" nillable="true" type="tns:ArrayOfApartmentInfoDto" />
+  <xs:complexType name="ApartmentInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApartmentId" type="xs:int" />
+      <xs:element minOccurs="0" name="ApartmentNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="IsVIP" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Price" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApartmentInfoDto" nillable="true" type="tns:ApartmentInfoDto" />
+  <xs:complexType name="ArrayOfDishDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DishDto" nillable="true" type="tns:DishDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDishDto" nillable="true" type="tns:ArrayOfDishDto" />
+  <xs:complexType name="DishDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DishId" type="xs:int" />
+      <xs:element minOccurs="0" name="DishName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DishPrice" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DishDto" nillable="true" type="tns:DishDto" />
+  <xs:complexType name="OrderedApartmentDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApartmentId" type="xs:int" />
+      <xs:element minOccurs="0" name="GuestPassportNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderedApartmentDto" nillable="true" type="tns:OrderedApartmentDto" />
+</xs:schema>

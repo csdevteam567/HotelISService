@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{218C3154-8708-4751-90B7-B2A35BB362AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HotelClientPresentation</RootNamespace>
+    <AssemblyName>HotelClientPresentation</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.2.0.8\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationController.cs" />
+    <Compile Include="Service References\HotelServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RelationsServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TypeConverter\DtoConverter.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="ServiceInterfaces\IParentChildDataService.cs" />
+    <Compile Include="Services\ParentChildDataService.cs" />
+    <Compile Include="Services\RelationsService.cs" />
+    <Compile Include="ViewInterfaces\IChildParentDirectoryView.cs" />
+    <Compile Include="ViewInterfaces\IStatusView.cs" />
+    <Compile Include="ViewInterfaces\IOrderedApartmentDirectoryView.cs" />
+    <Compile Include="ViewInterfaces\IOrderDirectoryView.cs" />
+    <Compile Include="ViewInterfaces\IGuestDirectoryView.cs" />
+    <Compile Include="ViewInterfaces\IPaycheckDirectoryView.cs" />
+    <Compile Include="ViewInterfaces\IUserDirectoryView.cs" />
+    <Compile Include="ViewInterfaces\IApartmentDirectoryView.cs" />
+    <Compile Include="ViewInterfaces\IMenuDirectoryView.cs" />
+    <Compile Include="ViewInterfaces\IRestaurantDirectoryView.cs" />
+    <Compile Include="ViewInterfaces\IFloorDirectoryView.cs" />
+    <Compile Include="ViewInterfaces\IHotelDirectoryView.cs" />
+    <Compile Include="ViewInterfaces\ICityDirectoryView.cs" />
+    <Compile Include="Presenters\BasePresenter.cs" />
+    <Compile Include="Presenters\CityDirectoryPresenter.cs" />
+    <Compile Include="Presenters\ApartmentDirectoryPresenter.cs" />
+    <Compile Include="Presenters\ChildParentDirectoryPresenter.cs" />
+    <Compile Include="Presenters\StatusPresenter.cs" />
+    <Compile Include="Presenters\OrderedApartmentDirectoryPresenter.cs" />
+    <Compile Include="Presenters\OrderDirectoryPresenter.cs" />
+    <Compile Include="Presenters\GuestDirectoryPresenter.cs" />
+    <Compile Include="Presenters\PaycheckDirectoryPresenter.cs" />
+    <Compile Include="Presenters\UserDirectoryPresenter.cs" />
+    <Compile Include="Presenters\MenuDirectoryPresenter.cs" />
+    <Compile Include="Presenters\RestaurantDirectoryPresenter.cs" />
+    <Compile Include="Presenters\FloorDirectoryPresenter.cs" />
+    <Compile Include="Presenters\HotelDirectoryPresenter.cs" />
+    <Compile Include="Presenters\CountryDirectoryPresenter.cs" />
+    <Compile Include="ViewInterfaces\IApplicationController.cs" />
+    <Compile Include="ViewInterfaces\IContainer.cs" />
+    <Compile Include="ViewInterfaces\ICountryDirectoryView.cs" />
+    <Compile Include="ViewInterfaces\ILoginView.cs" />
+    <Compile Include="ViewInterfaces\IMainView.cs" />
+    <Compile Include="ViewInterfaces\IPresenter.cs" />
+    <Compile Include="ViewInterfaces\IView.cs" />
+    <Compile Include="Presenters\LoginPresenter.cs" />
+    <Compile Include="Presenters\MainPresenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceInterfaces\IApartmentDataService.cs" />
+    <Compile Include="ServiceInterfaces\ICityDataService.cs" />
+    <Compile Include="ServiceInterfaces\ICountryDataService.cs" />
+    <Compile Include="ServiceInterfaces\IFloorDataService.cs" />
+    <Compile Include="ServiceInterfaces\IGuestDataService.cs" />
+    <Compile Include="ServiceInterfaces\IHotelDataService.cs" />
+    <Compile Include="ServiceInterfaces\ILoginService.cs" />
+    <Compile Include="ServiceInterfaces\IMenuDataService.cs" />
+    <Compile Include="ServiceInterfaces\IOrderDataService.cs" />
+    <Compile Include="ServiceInterfaces\IOrderedApartmentDataService.cs" />
+    <Compile Include="ServiceInterfaces\IRestaurantDataService.cs" />
+    <Compile Include="ServiceInterfaces\IUserDataService.cs" />
+    <Compile Include="Services\ApartmentDataService.cs" />
+    <Compile Include="Services\CityDataService.cs" />
+    <Compile Include="Services\CountryDataService.cs" />
+    <Compile Include="Services\FloorDataService.cs" />
+    <Compile Include="Services\GuestDataService.cs" />
+    <Compile Include="Services\HotelDataService.cs" />
+    <Compile Include="Services\HotelService.cs" />
+    <Compile Include="Services\LoginService.cs" />
+    <Compile Include="Services\MenuDataService.cs" />
+    <Compile Include="Services\OrderDataService.cs" />
+    <Compile Include="Services\OrderedApartmentDataService.cs" />
+    <Compile Include="Services\RestaurantDataService.cs" />
+    <Compile Include="Services\UserDataService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\HotelClientModel.HotelServiceReference.ApartmentDto.datasource" />
+    <None Include="Properties\DataSources\HotelClientModel.HotelServiceReference.CityDto.datasource" />
+    <None Include="Properties\DataSources\HotelClientModel.HotelServiceReference.CountryDto.datasource" />
+    <None Include="Properties\DataSources\HotelClientModel.HotelServiceReference.FamilyDto.datasource" />
+    <None Include="Properties\DataSources\HotelClientModel.HotelServiceReference.FloorDto.datasource" />
+    <None Include="Properties\DataSources\HotelClientModel.HotelServiceReference.GuestDto.datasource" />
+    <None Include="Properties\DataSources\HotelClientModel.HotelServiceReference.HotelDto.datasource" />
+    <None Include="Properties\DataSources\HotelClientModel.HotelServiceReference.LoginResultDto.datasource" />
+    <None Include="Properties\DataSources\HotelClientModel.HotelServiceReference.MenuDto.datasource" />
+    <None Include="Properties\DataSources\HotelClientModel.HotelServiceReference.OrderDto.datasource" />
+    <None Include="Properties\DataSources\HotelClientModel.HotelServiceReference.OrderedApartmentDto.datasource" />
+    <None Include="Properties\DataSources\HotelClientModel.HotelServiceReference.PaycheckDto.datasource" />
+    <None Include="Properties\DataSources\HotelClientModel.HotelServiceReference.RestaurantDto.datasource" />
+    <None Include="Properties\DataSources\HotelClientModel.HotelServiceReference.ServiceResponceDto.datasource" />
+    <None Include="Properties\DataSources\HotelClientModel.HotelServiceReference.UserDto.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Service References\HotelServiceReference\HotelClientPresentation.HotelServiceReference.ApartmentDto1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelClientPresentation.HotelServiceReference.CityDto1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelClientPresentation.HotelServiceReference.CountryDto1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelClientPresentation.HotelServiceReference.FamilyDto1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelClientPresentation.HotelServiceReference.FloorDto1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelClientPresentation.HotelServiceReference.GuestDto1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelClientPresentation.HotelServiceReference.HotelDto1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelClientPresentation.HotelServiceReference.LoginResultDto1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelClientPresentation.HotelServiceReference.MenuDto1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelClientPresentation.HotelServiceReference.OrderDto1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelClientPresentation.HotelServiceReference.OrderedApartmentDto1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelClientPresentation.HotelServiceReference.ParentChildDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelClientPresentation.HotelServiceReference.PaycheckDto1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelClientPresentation.HotelServiceReference.RestaurantDto1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelClientPresentation.HotelServiceReference.ServiceResponceDto1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelClientPresentation.HotelServiceReference.UserDto1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelService.wsdl" />
+    <None Include="Service References\HotelServiceReference\HotelService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HotelServiceReference\HotelService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RelationsServiceReference\HotelClientPresentation.RelationsServiceReference.ServiceResponceDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RelationsServiceReference\RelationsDataService.wsdl" />
+    <None Include="Service References\RelationsServiceReference\RelationsDataService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RelationsServiceReference\RelationsDataService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RelationsServiceReference\RelationsDataService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RelationsServiceReference\RelationsDataService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\HotelServiceReference\" />
+    <WCFMetadataStorage Include="Service References\RelationsServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HotelClientModel\HotelClientModel.csproj">
+      <Project>{b2dfc9fc-4cb6-4570-afdf-cc255416ca67}</Project>
+      <Name>HotelClientModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RelationsServiceReference\RelationsDataService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RelationsServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RelationsServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RelationsServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HotelServiceReference\HotelService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HotelServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HotelServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HotelServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,1100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HotelISDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="HotelISDBStoreContainer">
+    <EntitySet Name="Users" EntityType="HotelISDB.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Apartments" EntityType="HotelISDB.Store.Apartments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Guests" EntityType="HotelISDB.Store.Guests" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Orders" EntityType="HotelISDB.Store.Orders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Restaurants" EntityType="HotelISDB.Store.Restaurants" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Menus" EntityType="HotelISDB.Store.Menus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderedDishes" EntityType="HotelISDB.Store.OrderedDishes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Floors" EntityType="HotelISDB.Store.Floors" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderedApartments" EntityType="HotelISDB.Store.OrderedApartments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Countries" EntityType="HotelISDB.Store.Countries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cities" EntityType="HotelISDB.Store.Cities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Hotels" EntityType="HotelISDB.Store.Hotels" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ChildParents" EntityType="HotelISDB.Store.ChildParents" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FamilyRelations" EntityType="HotelISDB.Store.FamilyRelations" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="RestaurantMenu" Association="HotelISDB.Store.RestaurantMenu">
+      <End Role="Restaurant" EntitySet="Restaurants" />
+      <End Role="Menu" EntitySet="Menus" />
+    </AssociationSet>
+    <AssociationSet Name="MenuOrderedDishes" Association="HotelISDB.Store.MenuOrderedDishes">
+      <End Role="Menu" EntitySet="Menus" />
+      <End Role="OrderedDishes" EntitySet="OrderedDishes" />
+    </AssociationSet>
+    <AssociationSet Name="OrderOrderedDish" Association="HotelISDB.Store.OrderOrderedDish">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderedDish" EntitySet="OrderedDishes" />
+    </AssociationSet>
+    <AssociationSet Name="OrderOrderedApartment" Association="HotelISDB.Store.OrderOrderedApartment">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderedApartment" EntitySet="OrderedApartments" />
+    </AssociationSet>
+    <AssociationSet Name="FloorApartment" Association="HotelISDB.Store.FloorApartment">
+      <End Role="Floor" EntitySet="Floors" />
+      <End Role="Apartment" EntitySet="Apartments" />
+    </AssociationSet>
+    <AssociationSet Name="UserOrder" Association="HotelISDB.Store.UserOrder">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="ApartmentOrderedApartment" Association="HotelISDB.Store.ApartmentOrderedApartment">
+      <End Role="Apartment" EntitySet="Apartments" />
+      <End Role="OrderedApartment" EntitySet="OrderedApartments" />
+    </AssociationSet>
+    <AssociationSet Name="CountryCity" Association="HotelISDB.Store.CountryCity">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="HotelRestaurant" Association="HotelISDB.Store.HotelRestaurant">
+      <End Role="Hotel" EntitySet="Hotels" />
+      <End Role="Restaurant" EntitySet="Restaurants" />
+    </AssociationSet>
+    <AssociationSet Name="HotelFloor" Association="HotelISDB.Store.HotelFloor">
+      <End Role="Hotel" EntitySet="Hotels" />
+      <End Role="Floor" EntitySet="Floors" />
+    </AssociationSet>
+    <AssociationSet Name="CityHotel" Association="HotelISDB.Store.CityHotel">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Hotel" EntitySet="Hotels" />
+    </AssociationSet>
+    <AssociationSet Name="GuestOrderedApartment" Association="HotelISDB.Store.GuestOrderedApartment">
+      <End Role="Guest" EntitySet="Guests" />
+      <End Role="OrderedApartment" EntitySet="OrderedApartments" />
+    </AssociationSet>
+    <AssociationSet Name="HotelOrder" Association="HotelISDB.Store.HotelOrder">
+      <End Role="Hotel" EntitySet="Hotels" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="GuestOrder" Association="HotelISDB.Store.GuestOrder">
+      <End Role="Guest" EntitySet="Guests" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="GuestChildParentParent" Association="HotelISDB.Store.GuestChildParentParent">
+      <End Role="Guest" EntitySet="Guests" />
+      <End Role="ChildParent" EntitySet="ChildParents" />
+    </AssociationSet>
+    <AssociationSet Name="GuestChildParentChild" Association="HotelISDB.Store.GuestChildParentChild">
+      <End Role="Guest" EntitySet="Guests" />
+      <End Role="ChildParent" EntitySet="ChildParents" />
+    </AssociationSet>
+    <AssociationSet Name="GuestFamilyRelation" Association="HotelISDB.Store.GuestFamilyRelation">
+      <End Role="Guest" EntitySet="Guests" />
+      <End Role="FamilyRelation" EntitySet="FamilyRelations" />
+    </AssociationSet>
+    <AssociationSet Name="GuestFamilyRelation1" Association="HotelISDB.Store.GuestFamilyRelation1">
+      <End Role="Guest" EntitySet="Guests" />
+      <End Role="FamilyRelation" EntitySet="FamilyRelations" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Role" Type="int" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Apartments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="int" Nullable="false" />
+    <Property Name="TypeVip" Type="bit" Nullable="false" />
+    <Property Name="MaxCapacity" Type="int" Nullable="false" />
+    <Property Name="RoomsNumber" Type="int" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="FloorId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Guests">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PassportNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MiddleName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
+    <Property Name="Sex" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StatusVip" Type="bit" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Discount" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+    <Property Name="TotalPrice" Type="float" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="HotelId" Type="int" Nullable="false" />
+    <Property Name="GuestId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Restaurants">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HotelId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DishName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="RestaurantId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderedDishes">
+    <Key>
+      <PropertyRef Name="OrderId" />
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="MenuId" Type="int" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Floors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaxApartments" Type="int" Nullable="false" />
+    <Property Name="FloorNum" Type="int" Nullable="false" />
+    <Property Name="HotelId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderedApartments">
+    <Key>
+      <PropertyRef Name="OrderId" />
+      <PropertyRef Name="ApartmentId" />
+      <PropertyRef Name="GuestId" />
+    </Key>
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="ApartmentId" Type="int" Nullable="false" />
+    <Property Name="GuestId" Type="int" Nullable="false" />
+    <Property Name="ActualDepartureDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CountryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hotels">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Rating" Type="int" Nullable="false" />
+    <Property Name="HasRestaurant" Type="bit" Nullable="false" />
+    <Property Name="MaxFloorsCount" Type="int" Nullable="false" />
+    <Property Name="CityId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChildParents">
+    <Key>
+      <PropertyRef Name="ChildId" />
+      <PropertyRef Name="ParentId" />
+    </Key>
+    <Property Name="ParentId" Type="int" Nullable="false" />
+    <Property Name="ChildId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FamilyRelations">
+    <Key>
+      <PropertyRef Name="RelativeId" />
+      <PropertyRef Name="GuestId" />
+    </Key>
+    <Property Name="GuestId" Type="int" Nullable="false" />
+    <Property Name="RelativeId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="RestaurantMenu">
+    <End Role="Restaurant" Type="HotelISDB.Store.Restaurants" Multiplicity="1" />
+    <End Role="Menu" Type="HotelISDB.Store.Menus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="RestaurantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MenuOrderedDishes">
+    <End Role="Menu" Type="HotelISDB.Store.Menus" Multiplicity="1" />
+    <End Role="OrderedDishes" Type="HotelISDB.Store.OrderedDishes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderedDishes">
+        <PropertyRef Name="MenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OrderOrderedDish">
+    <End Role="Order" Type="HotelISDB.Store.Orders" Multiplicity="1" />
+    <End Role="OrderedDish" Type="HotelISDB.Store.OrderedDishes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderedDish">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OrderOrderedApartment">
+    <End Role="Order" Type="HotelISDB.Store.Orders" Multiplicity="1" />
+    <End Role="OrderedApartment" Type="HotelISDB.Store.OrderedApartments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderedApartment">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FloorApartment">
+    <End Role="Floor" Type="HotelISDB.Store.Floors" Multiplicity="1" />
+    <End Role="Apartment" Type="HotelISDB.Store.Apartments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Floor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Apartment">
+        <PropertyRef Name="FloorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserOrder">
+    <End Role="User" Type="HotelISDB.Store.Users" Multiplicity="1" />
+    <End Role="Order" Type="HotelISDB.Store.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ApartmentOrderedApartment">
+    <End Role="Apartment" Type="HotelISDB.Store.Apartments" Multiplicity="1" />
+    <End Role="OrderedApartment" Type="HotelISDB.Store.OrderedApartments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartment">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderedApartment">
+        <PropertyRef Name="ApartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CountryCity">
+    <End Role="Country" Type="HotelISDB.Store.Countries" Multiplicity="1" />
+    <End Role="City" Type="HotelISDB.Store.Cities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HotelRestaurant">
+    <End Role="Hotel" Type="HotelISDB.Store.Hotels" Multiplicity="1" />
+    <End Role="Restaurant" Type="HotelISDB.Store.Restaurants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Restaurant">
+        <PropertyRef Name="HotelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HotelFloor">
+    <End Role="Hotel" Type="HotelISDB.Store.Hotels" Multiplicity="1" />
+    <End Role="Floor" Type="HotelISDB.Store.Floors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Floor">
+        <PropertyRef Name="HotelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CityHotel">
+    <End Role="City" Type="HotelISDB.Store.Cities" Multiplicity="1" />
+    <End Role="Hotel" Type="HotelISDB.Store.Hotels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Hotel">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GuestOrderedApartment">
+    <End Role="Guest" Type="HotelISDB.Store.Guests" Multiplicity="1" />
+    <End Role="OrderedApartment" Type="HotelISDB.Store.OrderedApartments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guest">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderedApartment">
+        <PropertyRef Name="GuestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HotelOrder">
+    <End Role="Hotel" Type="HotelISDB.Store.Hotels" Multiplicity="1" />
+    <End Role="Order" Type="HotelISDB.Store.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="HotelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GuestOrder">
+    <End Role="Guest" Type="HotelISDB.Store.Guests" Multiplicity="1" />
+    <End Role="Order" Type="HotelISDB.Store.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guest">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="GuestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GuestChildParentParent">
+    <End Role="Guest" Type="HotelISDB.Store.Guests" Multiplicity="1" />
+    <End Role="ChildParent" Type="HotelISDB.Store.ChildParents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guest">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChildParent">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GuestChildParentChild">
+    <End Role="Guest" Type="HotelISDB.Store.Guests" Multiplicity="1" />
+    <End Role="ChildParent" Type="HotelISDB.Store.ChildParents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guest">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChildParent">
+        <PropertyRef Name="ChildId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GuestFamilyRelation">
+    <End Role="Guest" Type="HotelISDB.Store.Guests" Multiplicity="1" />
+    <End Role="FamilyRelation" Type="HotelISDB.Store.FamilyRelations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guest">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FamilyRelation">
+        <PropertyRef Name="GuestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GuestFamilyRelation1">
+    <End Role="Guest" Type="HotelISDB.Store.Guests" Multiplicity="1" />
+    <End Role="FamilyRelation" Type="HotelISDB.Store.FamilyRelations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guest">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FamilyRelation">
+        <PropertyRef Name="RelativeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="HotelISDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" >
+        <EntityContainer Name="HotelISDBContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="HotelISDB.User" />
+          <EntitySet Name="Apartments" EntityType="HotelISDB.Apartment" />
+          <EntitySet Name="Guests" EntityType="HotelISDB.Guest" />
+          <EntitySet Name="Orders" EntityType="HotelISDB.Order" />
+          <EntitySet Name="Restaurants" EntityType="HotelISDB.Restaurant" />
+          <EntitySet Name="Menus" EntityType="HotelISDB.Menu" />
+          <AssociationSet Name="RestaurantMenu" Association="HotelISDB.RestaurantMenu">
+            <End Role="Restaurant" EntitySet="Restaurants" />
+            <End Role="Menu" EntitySet="Menus" />
+          </AssociationSet>
+          <EntitySet Name="OrderedDishes" EntityType="HotelISDB.OrderedDish" />
+          <AssociationSet Name="MenuOrderedDishes" Association="HotelISDB.MenuOrderedDishes">
+            <End Role="Menu" EntitySet="Menus" />
+            <End Role="OrderedDishes" EntitySet="OrderedDishes" />
+          </AssociationSet>
+          <AssociationSet Name="OrderOrderedDish" Association="HotelISDB.OrderOrderedDish">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="OrderedDish" EntitySet="OrderedDishes" />
+          </AssociationSet>
+          <EntitySet Name="Floors" EntityType="HotelISDB.Floor" />
+          <EntitySet Name="OrderedApartments" EntityType="HotelISDB.OrderedApartment" />
+          <AssociationSet Name="OrderOrderedApartment" Association="HotelISDB.OrderOrderedApartment">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="OrderedApartment" EntitySet="OrderedApartments" />
+          </AssociationSet>
+          <AssociationSet Name="FloorApartment" Association="HotelISDB.FloorApartment">
+            <End Role="Floor" EntitySet="Floors" />
+            <End Role="Apartment" EntitySet="Apartments" />
+          </AssociationSet>
+          <AssociationSet Name="UserOrder" Association="HotelISDB.UserOrder">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="ApartmentOrderedApartment" Association="HotelISDB.ApartmentOrderedApartment">
+            <End Role="Apartment" EntitySet="Apartments" />
+            <End Role="OrderedApartment" EntitySet="OrderedApartments" />
+          </AssociationSet>
+          <EntitySet Name="Countries" EntityType="HotelISDB.Country" />
+          <EntitySet Name="Cities" EntityType="HotelISDB.City" />
+          <AssociationSet Name="CountryCity" Association="HotelISDB.CountryCity">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="City" EntitySet="Cities" />
+          </AssociationSet>
+          <EntitySet Name="Hotels" EntityType="HotelISDB.Hotel" />
+          <AssociationSet Name="HotelRestaurant" Association="HotelISDB.HotelRestaurant">
+            <End Role="Hotel" EntitySet="Hotels" />
+            <End Role="Restaurant" EntitySet="Restaurants" />
+          </AssociationSet>
+          <AssociationSet Name="HotelFloor" Association="HotelISDB.HotelFloor">
+            <End Role="Hotel" EntitySet="Hotels" />
+            <End Role="Floor" EntitySet="Floors" />
+          </AssociationSet>
+          <AssociationSet Name="CityHotel" Association="HotelISDB.CityHotel">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Hotel" EntitySet="Hotels" />
+          </AssociationSet>
+          <AssociationSet Name="GuestOrderedApartment" Association="HotelISDB.GuestOrderedApartment">
+            <End Role="Guest" EntitySet="Guests" />
+            <End Role="OrderedApartment" EntitySet="OrderedApartments" />
+          </AssociationSet>
+          <AssociationSet Name="HotelOrder" Association="HotelISDB.HotelOrder">
+            <End Role="Hotel" EntitySet="Hotels" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="GuestOrder" Association="HotelISDB.GuestOrder">
+            <End Role="Guest" EntitySet="Guests" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <EntitySet Name="ChildParents" EntityType="HotelISDB.ChildParent" />
+          <AssociationSet Name="GuestChildParentParent" Association="HotelISDB.GuestChildParentParent">
+            <End Role="Guest" EntitySet="Guests" />
+            <End Role="ChildParent" EntitySet="ChildParents" />
+          </AssociationSet>
+          <AssociationSet Name="GuestChildParentChild" Association="HotelISDB.GuestChildParentChild">
+            <End Role="Guest" EntitySet="Guests" />
+            <End Role="ChildParent" EntitySet="ChildParents" />
+          </AssociationSet>
+          <EntitySet Name="FamilyRelations" EntityType="HotelISDB.FamilyRelation" />
+          <AssociationSet Name="GuestFamilyRelation" Association="HotelISDB.GuestFamilyRelation">
+            <End Role="Guest" EntitySet="Guests" />
+            <End Role="FamilyRelation" EntitySet="FamilyRelations" />
+          </AssociationSet>
+          <AssociationSet Name="GuestFamilyRelation1" Association="HotelISDB.GuestFamilyRelation1">
+            <End Role="Guest" EntitySet="Guests" />
+            <End Role="FamilyRelation" EntitySet="FamilyRelations" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FirstName" Nullable="false" />
+          <Property Type="String" Name="LastName" Nullable="false" />
+          <Property Type="Int32" Name="Role" Nullable="false" />
+          <Property Type="String" Name="Password" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="HotelISDB.UserOrder" FromRole="User" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Apartment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" />
+          <Property Type="Int32" Name="Number" Nullable="false" />
+          <Property Type="Boolean" Name="TypeVip" Nullable="false" />
+          <Property Type="Int32" Name="MaxCapacity" Nullable="false" />
+          <Property Type="Int32" Name="RoomsNumber" Nullable="false" />
+          <Property Type="Double" Name="Price" Nullable="false" />
+          <NavigationProperty Name="Floor" Relationship="HotelISDB.FloorApartment" FromRole="Apartment" ToRole="Floor" />
+          <Property Type="Int32" Name="FloorId" Nullable="false" />
+          <NavigationProperty Name="OrderedApartments" Relationship="HotelISDB.ApartmentOrderedApartment" FromRole="Apartment" ToRole="OrderedApartment" />
+        </EntityType>
+        <EntityType Name="Guest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PassportNumber" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="String" Name="FirstName" Nullable="false" />
+          <Property Type="String" Name="LastName" Nullable="false" />
+          <Property Type="String" Name="MiddleName" Nullable="true" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="false" />
+          <Property Type="String" Name="Sex" Nullable="false" />
+          <Property Type="Boolean" Name="StatusVip" Nullable="false" />
+          <Property Type="String" Name="Phone" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="false" />
+          <Property Type="Double" Name="Discount" Nullable="false" />
+          <NavigationProperty Name="OrderedApartments" Relationship="HotelISDB.GuestOrderedApartment" FromRole="Guest" ToRole="OrderedApartment" />
+          <NavigationProperty Name="Orders" Relationship="HotelISDB.GuestOrder" FromRole="Guest" ToRole="Order" />
+          <NavigationProperty Name="ChildParentsParent" Relationship="HotelISDB.GuestChildParentParent" FromRole="Guest" ToRole="ChildParent" />
+          <NavigationProperty Name="ChildParentsChild" Relationship="HotelISDB.GuestChildParentChild" FromRole="Guest" ToRole="ChildParent" />
+          <NavigationProperty Name="FamilyRelations" Relationship="HotelISDB.GuestFamilyRelation" FromRole="Guest" ToRole="FamilyRelation" />
+          <NavigationProperty Name="FamilyRelations1" Relationship="HotelISDB.GuestFamilyRelation1" FromRole="Guest" ToRole="FamilyRelation" />
+          </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="OrderedDishes" Relationship="HotelISDB.OrderOrderedDish" FromRole="Order" ToRole="OrderedDish" />
+          <Property Type="DateTime" Name="OrderDate" Nullable="false" />
+          <Property Type="Double" Name="TotalPrice" Nullable="false" />
+          <NavigationProperty Name="OrderedApartments" Relationship="HotelISDB.OrderOrderedApartment" FromRole="Order" ToRole="OrderedApartment" />
+          <NavigationProperty Name="User" Relationship="HotelISDB.UserOrder" FromRole="Order" ToRole="User" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <NavigationProperty Name="Hotel" Relationship="HotelISDB.HotelOrder" FromRole="Order" ToRole="Hotel" />
+          <Property Type="Int32" Name="HotelId" Nullable="false" />
+          <NavigationProperty Name="Guest" Relationship="HotelISDB.GuestOrder" FromRole="Order" ToRole="Guest" />
+          <Property Type="Int32" Name="GuestId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Restaurant">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Menus" Relationship="HotelISDB.RestaurantMenu" FromRole="Restaurant" ToRole="Menu" />
+          <NavigationProperty Name="Hotel" Relationship="HotelISDB.HotelRestaurant" FromRole="Restaurant" ToRole="Hotel" />
+          <Property Type="Int32" Name="HotelId" Nullable="false" />
+          </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DishName" Nullable="false" />
+          <Property Type="Double" Name="Price" Nullable="false" />
+          <NavigationProperty Name="Restaurant" Relationship="HotelISDB.RestaurantMenu" FromRole="Menu" ToRole="Restaurant" />
+          <Property Type="Int32" Name="RestaurantId" Nullable="false" />
+          <NavigationProperty Name="OrderedDishes" Relationship="HotelISDB.MenuOrderedDishes" FromRole="Menu" ToRole="OrderedDishes" />
+        </EntityType>
+        <Association Name="RestaurantMenu">
+          <End Type="HotelISDB.Restaurant" Role="Restaurant" Multiplicity="1" />
+          <End Type="HotelISDB.Menu" Role="Menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Restaurant">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Menu">
+              <PropertyRef Name="RestaurantId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="OrderedDish">
+          <Key>
+            <PropertyRef Name="OrderId" />
+            <PropertyRef Name="MenuId" />
+          </Key>
+          <NavigationProperty Name="Menu" Relationship="HotelISDB.MenuOrderedDishes" FromRole="OrderedDishes" ToRole="Menu" />
+          <Property Type="Int32" Name="MenuId" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="HotelISDB.OrderOrderedDish" FromRole="OrderedDish" ToRole="Order" />
+          <Property Type="Int32" Name="OrderId" Nullable="false" />
+        </EntityType>
+        <Association Name="MenuOrderedDishes">
+          <End Type="HotelISDB.Menu" Role="Menu" Multiplicity="1" />
+          <End Type="HotelISDB.OrderedDish" Role="OrderedDishes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderedDishes">
+              <PropertyRef Name="MenuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OrderOrderedDish">
+          <End Type="HotelISDB.Order" Role="Order" Multiplicity="1" />
+          <End Type="HotelISDB.OrderedDish" Role="OrderedDish" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderedDish">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Floor" >
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" />
+          <Property Type="Int32" Name="MaxApartments" Nullable="false" />
+          <Property Type="Int32" Name="FloorNum" Nullable="false" />
+          <NavigationProperty Name="Apartments" Relationship="HotelISDB.FloorApartment" FromRole="Floor" ToRole="Apartment" />
+          <NavigationProperty Name="Hotel" Relationship="HotelISDB.HotelFloor" FromRole="Floor" ToRole="Hotel" />
+          <Property Type="Int32" Name="HotelId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderedApartment">
+          <Key>
+            <PropertyRef Name="OrderId" />
+            <PropertyRef Name="ApartmentId" />
+            <PropertyRef Name="GuestId" />
+          </Key>
+          <NavigationProperty Name="Order" Relationship="HotelISDB.OrderOrderedApartment" FromRole="OrderedApartment" ToRole="Order" />
+          <Property Type="Int32" Name="OrderId" Nullable="false" />
+          <NavigationProperty Name="Apartment" Relationship="HotelISDB.ApartmentOrderedApartment" FromRole="OrderedApartment" ToRole="Apartment" />
+          <Property Type="Int32" Name="ApartmentId" Nullable="false" />
+          <Property Type="Int32" Name="GuestId" Nullable="false" />
+          <Property Type="DateTime" Name="ActualDepartureDate" Nullable="false" />
+          <NavigationProperty Name="Guest" Relationship="HotelISDB.GuestOrderedApartment" FromRole="OrderedApartment" ToRole="Guest" />
+          </EntityType>
+        <Association Name="OrderOrderedApartment">
+          <End Type="HotelISDB.Order" Role="Order" Multiplicity="1" />
+          <End Type="HotelISDB.OrderedApartment" Role="OrderedApartment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderedApartment">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FloorApartment">
+          <End Type="HotelISDB.Floor" Role="Floor" Multiplicity="1" />
+          <End Type="HotelISDB.Apartment" Role="Apartment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Floor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Apartment">
+              <PropertyRef Name="FloorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserOrder">
+          <End Type="HotelISDB.User" Role="User" Multiplicity="1" />
+          <End Type="HotelISDB.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ApartmentOrderedApartment">
+          <End Type="HotelISDB.Apartment" Role="Apartment" Multiplicity="1" />
+          <End Type="HotelISDB.OrderedApartment" Role="OrderedApartment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Apartment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderedApartment">
+              <PropertyRef Name="ApartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Cities" Relationship="HotelISDB.CountryCity" FromRole="Country" ToRole="City" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Country" Relationship="HotelISDB.CountryCity" FromRole="City" ToRole="Country" />
+          <Property Type="Int32" Name="CountryId" Nullable="false" />
+          <NavigationProperty Name="Hotels" Relationship="HotelISDB.CityHotel" FromRole="City" ToRole="Hotel" />
+        </EntityType>
+        <Association Name="CountryCity">
+          <End Type="HotelISDB.Country" Role="Country" Multiplicity="1" />
+          <End Type="HotelISDB.City" Role="City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Hotel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="Rating" Nullable="false" />
+          <Property Type="Boolean" Name="HasRestaurant" Nullable="false" />
+          <Property Type="Int32" Name="MaxFloorsCount" Nullable="false" />
+          <NavigationProperty Name="Restaurants" Relationship="HotelISDB.HotelRestaurant" FromRole="Hotel" ToRole="Restaurant" />
+          <NavigationProperty Name="Floors" Relationship="HotelISDB.HotelFloor" FromRole="Hotel" ToRole="Floor" />
+          <NavigationProperty Name="City" Relationship="HotelISDB.CityHotel" FromRole="Hotel" ToRole="City" />
+          <Property Type="Int32" Name="CityId" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="HotelISDB.HotelOrder" FromRole="Hotel" ToRole="Order" />
+        </EntityType>
+        <Association Name="HotelRestaurant">
+          <End Type="HotelISDB.Hotel" Role="Hotel" Multiplicity="1" />
+          <End Type="HotelISDB.Restaurant" Role="Restaurant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Restaurant">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HotelFloor">
+          <End Type="HotelISDB.Hotel" Role="Hotel" Multiplicity="1" />
+          <End Type="HotelISDB.Floor" Role="Floor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Floor">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CityHotel">
+          <End Type="HotelISDB.City" Role="City" Multiplicity="1" />
+          <End Type="HotelISDB.Hotel" Role="Hotel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Hotel">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GuestOrderedApartment">
+          <End Type="HotelISDB.Guest" Role="Guest" Multiplicity="1" />
+          <End Type="HotelISDB.OrderedApartment" Role="OrderedApartment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guest">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderedApartment">
+              <PropertyRef Name="GuestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HotelOrder">
+          <End Type="HotelISDB.Hotel" Role="Hotel" Multiplicity="1" />
+          <End Type="HotelISDB.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="HotelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GuestOrder">
+          <End Type="HotelISDB.Guest" Role="Guest" Multiplicity="1" />
+          <End Type="HotelISDB.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guest">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="GuestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ChildParent" >
+          <Key>
+            <PropertyRef Name="ChildId" />
+            <PropertyRef Name="ParentId" />
+          </Key>
+          <NavigationProperty Name="Parent" Relationship="HotelISDB.GuestChildParentParent" FromRole="ChildParent" ToRole="Guest" />
+          <Property Type="Int32" Name="ParentId" Nullable="false" />
+          <NavigationProperty Name="Child" Relationship="HotelISDB.GuestChildParentChild" FromRole="ChildParent" ToRole="Guest" />
+          <Property Type="Int32" Name="ChildId" Nullable="false" />
+        </EntityType>
+        <Association Name="GuestChildParentParent">
+          <End Type="HotelISDB.Guest" Role="Guest" Multiplicity="1" />
+          <End Type="HotelISDB.ChildParent" Role="ChildParent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guest">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChildParent">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GuestChildParentChild">
+          <End Type="HotelISDB.Guest" Role="Guest" Multiplicity="1" />
+          <End Type="HotelISDB.ChildParent" Role="ChildParent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guest">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ChildParent">
+              <PropertyRef Name="ChildId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FamilyRelation" >
+          <Key>
+            <PropertyRef Name="RelativeId" />
+            <PropertyRef Name="GuestId" />
+          </Key>
+          <NavigationProperty Name="Guest" Relationship="HotelISDB.GuestFamilyRelation" FromRole="FamilyRelation" ToRole="Guest" />
+          <Property Type="Int32" Name="GuestId" Nullable="false" />
+          <NavigationProperty Name="Guest1" Relationship="HotelISDB.GuestFamilyRelation1" FromRole="FamilyRelation" ToRole="Guest" />
+          <Property Type="Int32" Name="RelativeId" Nullable="false" />
+        </EntityType>
+        <Association Name="GuestFamilyRelation">
+          <End Type="HotelISDB.Guest" Role="Guest" Multiplicity="1" />
+          <End Type="HotelISDB.FamilyRelation" Role="FamilyRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guest">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FamilyRelation">
+              <PropertyRef Name="GuestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GuestFamilyRelation1">
+          <End Type="HotelISDB.Guest" Role="Guest" Multiplicity="1" />
+          <End Type="HotelISDB.FamilyRelation" Role="FamilyRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guest">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FamilyRelation">
+              <PropertyRef Name="RelativeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HotelISDBStoreContainer" CdmEntityContainer="HotelISDBContainer">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(HotelISDB.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Apartments">
+      <EntityTypeMapping TypeName="IsTypeOf(HotelISDB.Apartment)">
+        <MappingFragment StoreEntitySet="Apartments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="TypeVip" ColumnName="TypeVip" />
+          <ScalarProperty Name="MaxCapacity" ColumnName="MaxCapacity" />
+          <ScalarProperty Name="RoomsNumber" ColumnName="RoomsNumber" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="FloorId" ColumnName="FloorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Guests">
+      <EntityTypeMapping TypeName="IsTypeOf(HotelISDB.Guest)">
+        <MappingFragment StoreEntitySet="Guests">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="StatusVip" ColumnName="StatusVip" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="IsTypeOf(HotelISDB.Order)">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+          <ScalarProperty Name="GuestId" ColumnName="GuestId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Restaurants">
+      <EntityTypeMapping TypeName="IsTypeOf(HotelISDB.Restaurant)">
+        <MappingFragment StoreEntitySet="Restaurants">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="IsTypeOf(HotelISDB.Menu)">
+        <MappingFragment StoreEntitySet="Menus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DishName" ColumnName="DishName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderedDishes">
+      <EntityTypeMapping TypeName="IsTypeOf(HotelISDB.OrderedDish)">
+        <MappingFragment StoreEntitySet="OrderedDishes">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Floors">
+      <EntityTypeMapping TypeName="IsTypeOf(HotelISDB.Floor)">
+        <MappingFragment StoreEntitySet="Floors">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MaxApartments" ColumnName="MaxApartments" />
+          <ScalarProperty Name="FloorNum" ColumnName="FloorNum" />
+          <ScalarProperty Name="HotelId" ColumnName="HotelId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderedApartments">
+      <EntityTypeMapping TypeName="IsTypeOf(HotelISDB.OrderedApartment)">
+        <MappingFragment StoreEntitySet="OrderedApartments">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="ApartmentId" ColumnName="ApartmentId" />
+          <ScalarProperty Name="GuestId" ColumnName="GuestId" />
+          <ScalarProperty Name="ActualDepartureDate" ColumnName="ActualDepartureDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="IsTypeOf(HotelISDB.Country)">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="IsTypeOf(HotelISDB.City)">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hotels">
+      <EntityTypeMapping TypeName="IsTypeOf(HotelISDB.Hotel)">
+        <MappingFragment StoreEntitySet="Hotels">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="HasRestaurant" ColumnName="HasRestaurant" />
+          <ScalarProperty Name="MaxFloorsCount" ColumnName="MaxFloorsCount" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChildParents">
+      <EntityTypeMapping TypeName="IsTypeOf(HotelISDB.ChildParent)">
+        <MappingFragment StoreEntitySet="ChildParents">
+          <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FamilyRelations">
+      <EntityTypeMapping TypeName="IsTypeOf(HotelISDB.FamilyRelation)">
+        <MappingFragment StoreEntitySet="FamilyRelations">
+          <ScalarProperty Name="RelativeId" ColumnName="RelativeId" />
+          <ScalarProperty Name="GuestId" ColumnName="GuestId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
